@@ -6,10 +6,13 @@ import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
+const isProd = process.env.NODE_ENV === "production";
+const prefix = isProd ? "/NexSkill" : "";
+
 const slides = [
-  { id: 1, image: "/images/slider-1.png", title: "Scale Your Business" },
-  { id: 2, image: "/images/slider-2.png", title: "Modern Tech Solutions" },
-  { id: 3, image: "/images/slider-3.png", title: "Collaborative Design" },
+  { id: 1, image: `${prefix}/images/slider-1.png`, title: "Scale Your Business" },
+  { id: 2, image: `${prefix}/images/slider-2.png`, title: "Modern Tech Solutions" },
+  { id: 3, image: `${prefix}/images/slider-3.png`, title: "Collaborative Design" },
 ];
 
 export default function ImageSlider() {
